@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/rime/rime-cantonese",
+  "revision": "259f0e48bba840c3a2e0d117539e96937f3d89bc",
+  "license": "CC BY 4.0",
+  "files": [
+    {
+      "file": "jyut6ping3.words.dict.yaml",
+      "sha256": "54d174ad2bb997e4a678b7b076b84e4dc5914481b32467cdea3b43e88b7d5474"
+    },
+    {
+      "file": "jyut6ping3.chars.dict.yaml",
+      "sha256": "9b053a594c80eae76545bcdd83239884a49b1ba48b89ca0ab9e8daac79f33013"
+    }
+  ],
+  "readings": 136705,
+  "unique_words": 128109,
+  "multi_character_readings": 102378
+}

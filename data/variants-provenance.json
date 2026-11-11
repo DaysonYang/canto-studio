@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/BYVoid/OpenCC",
+  "revision": "fae2a0a911c30764e669a7d8b0591cd8e852934a",
+  "license": "Apache-2.0",
+  "changes": "First candidate, equal-length conversions only; JSON/JS packaging.",
+  "files": [
+    {
+      "file": "TSCharacters.txt",
+      "sha256": "9ff46a7d30e5765375eb13d33f2b03a34d298913caf2b120380679f33ae1642d"
+    },
+    {
+      "file": "TSPhrases.txt",
+      "sha256": "1b1e60a3d50492bc088bcd4372152570b5f0ccbe2ded0b66c90b6b8eeb5f849f"
+    },
+    {
+      "file": "STCharacters.txt",
+      "sha256": "a0ca1601c70648cf48b33c3c6210ccbecc5c7eead4b4c3daf76587ba2c03582b"
+    },
+    {
+      "file": "STPhrases.txt",
+      "sha256": "24d23700f4f3d1860b899aa90896dcc7ec56c535a0b3a246bbf5a7048c7bdeb8"
+    }
+  ]
+}

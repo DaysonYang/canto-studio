@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字有聲 · 粵語填詞工作台</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="rhyme.css">
+<link rel="stylesheet" href="speech.css">
+<link rel="stylesheet" href="smart.css">
+<link rel="stylesheet" href="compose.css">
+<header><a href="#">字有聲<span> CANTO STUDIO</span></a><select id="script-mode" aria-label="简繁模式"><option value="traditional">繁體</option><option value="simplified">简体</option></select></header>
+<main>
+<section class="intro"><p class="eyebrow">從聲調，找到下一句。</p><h1>讓每一個字，<br>落在對的聲音上。</h1><p>輸入旋律的數字編碼，探索現成粵語字詞。<br>留住喜歡的字，再慢慢寫成你的歌。</p><div id="stats" class="badge">正在載入本地詞庫…</div></section>
+<section class="workspace"><div class="heading"><h2>輸入聲調，查找字詞</h2></div>
+<div class="mode-switches"><div class="actions" role="group" aria-label="填詞工作模式" aria-describedby="work-mode-help"><button id="tab-words" type="button" class="primary" aria-pressed="true">詞組搜尋</button><button id="tab-compose" type="button" aria-pressed="false">自由拼詞</button></div>
+<p id="work-mode-help" class="hint">詞組搜尋：按聲調查字詞。自由拼詞：拆成多組，逐組選詞再組合。</p>
+<hr class="mode-divider" aria-hidden="true">
+<div class="actions" role="group" aria-label="聲調編碼模式" aria-describedby="encoding-mode-help"><button id="encoding-loose" type="button" aria-pressed="false">0243 寬鬆</button><button id="encoding-strict" type="button" class="primary" aria-pressed="true">394052 嚴格</button></div></div><p id="encoding-mode-help" class="hint">0243 合併 1／2 聲與 3／5 聲，候選較多；394052 區分六調，匹配更精確，但候選可能較少。</p>
+<label for="code">聲調數字或字詞 <small>例如 00、番茄醬、番茄酱牛肉面不吃辣；輸入後自動顯示</small></label><div class="search-row"><input id="code" value="394052" maxlength="48" autocomplete="off"><button id="rhyme-toggle" type="button" aria-pressed="false">押韻：關</button><select id="rhyme-count" aria-label="押韻字數" disabled><option value="1">末尾 1 字</option><option value="2">末尾 2 字</option><option value="3">末尾 3 字</option></select></div><p id="rhyme-note" class="hint">開啟押韻後，依輸入字詞的末尾 1–3 字逐字匹配粵拼韻母；純數字沒有韻母，請輸入字詞。</p>
+<div id="recognized" aria-live="polite"></div>
+<p class="hint">可混合輸入，例如 0033天窗叫：數字位置找詞，歌詞位置保留原字。末尾歌詞可用於押韻。</p>
+<p id="encoding-map" class="hint"></p>
+<div class="actions"><button id="search" class="primary">查找字詞</button></div>
+<details id="advanced"><summary>高級選項：聲調示例與歌詞鎖定</summary><button id="example">載入九字示例</button>
+<div id="example-tones" class="example-tones"></div><p class="hint">九聲的 7／8／9 入聲在粵拼歸入 1／3／6 調；不 bat1、吃 hek3、肉 juk6 在兩種模式下皆編為 3、4、2。</p>
+<details><summary>同音數字</summary><p class="hint">394052 的六個數字可按粵語讀出來對照六調：三 saam1、九 gau2、四 sei3、零 ling4、五 ng5、二 ji6。0243 則把相近聲調分在同一編碼類別；同碼不代表完全同調。</p></details>
+<label for="lyrics">歌詞草稿 <small>以 □ 代表留白；鎖定兼容簡繁字形</small></label><input id="lyrics" value="詩史試時市是" placeholder="例如 番茄醬□□□□□□" autocomplete="off">
+<p class="hint">點字卡鎖定該位置，再搜尋。鎖定會約束對應字位；數字由目標編碼提供。</p><div id="tiles" class="tiles"></div>
+<div class="actions"><button id="unlock">解除全部鎖定</button><button id="copy">複製草稿與編碼</button></div></details><p id="message" role="status" aria-live="polite"></p></section>
+<section id="word-panel" class="results"><div class="heading"><h2>對應字詞</h2><div class="rank-toolbar"><select id="rank-sort" aria-label="排序方式"><option value="smart">智能推薦</option><option value="frequency">常用優先（兼顧詞質）</option><option value="context">最符合上下文</option><option value="theme">最符合主題</option><option value="similar">與選中詞最相似</option></select><label class="page-size-label" for="result-limit">每頁 <input id="result-limit" type="number" min="1" max="100" step="1" value="12" inputmode="numeric" aria-label="每頁結果數（1 至 100）"> 項</label></div></div><div id="word-pos"></div><p class="hint">▶ 粵語合成朗讀，依裝置提供的粵語語音播放；多音字可能與所列粵拼不同。</p><p id="speech-status" role="status" aria-live="polite"></p><p id="summary">輸入數字或字詞即可查看。</p><p id="rank-status" role="status" aria-live="polite"></p>
+<div id="smart-controls"></div><div id="candidates"></div></section>
+<section id="compose-panel" class="results" hidden><div class="heading"><h2>自由拼詞</h2></div><label for="compose-plans">自動拆分方案</label><select id="compose-plans"></select><label for="compose-split">自訂分詞方式</label><input id="compose-split" class="partition" placeholder="例如 00 + 33 + 99 + 4"><div class="actions"><button id="compose-apply">套用分詞</button></div><p class="hint">加號表示分隔位置；合併後須等於搜尋編碼。保留範圍未變的選詞。</p>
+<div class="compose-summary"><h3>目前組合</h3><div id="compose-current" aria-live="polite"></div><div class="actions"><button id="compose-copy">複製</button><button id="compose-save">保存組合</button><button id="compose-favorite">收藏組合</button><button id="compose-clear">清空未鎖定</button></div><p id="compose-status" role="status" aria-live="polite"></p></div>
+<label class="check-label"><input id="compose-dynamic" type="checkbox" checked>按已選詞動態排序</label><label for="compose-topic">主題／關鍵詞（選填）</label><input id="compose-topic" maxlength="200" placeholder="例如 雨夜、思念"><label class="compose-mobile" for="compose-mobile">切換槽位 <select id="compose-mobile"></select></label><div id="compose-slots"></div>
+<div class="actions"><button id="compose-recommend" class="primary">推薦組合</button></div><p class="hint">只組合各槽位的真實候選，保留鎖定詞。語料搭配是參考，不限制手動選詞。</p><div id="compose-recommendations" class="actions"></div><details><summary>保存與收藏歷史</summary><div id="compose-history" class="actions"></div></details></section>
+<footer><h3>每個結果，都有出處。</h3><p>CanCLID / Rime Cantonese · CC BY 4.0 · 僅收錄 words、chars 兩張表。詞頻、口語片段及搭配統計：HKCanCor，K. K. Luke、May L. Y. Wong（2015），CC BY 4.0。詞頻是語料觀察次數，無記錄不代表生僻。</p><p><a href="https://github.com/rime/rime-cantonese">原始詞庫</a> · <a href="licenses/Rime-CC-BY-4.0.txt">詞庫授權</a> · <a href="data/provenance.json">詞庫版本</a> · <a href="https://github.com/fcbond/hkcancor">HKCanCor</a> · <a href="licenses/HKCanCor-CC-BY-4.0.txt">語料授權</a> · <a href="data/corpus-provenance.json">語料版本及處理方式</a> · <a href="SOURCES.md">來源說明</a></p><p>搜尋、拼詞、排序與偏好均在本地完成，不上傳歌詞。</p></footer>
+<p class="hint">簡繁轉換：<a href="https://github.com/BYVoid/OpenCC">OpenCC / BYVoid 及貢獻者</a> · <a href="licenses/OpenCC-Apache-2.0.txt">Apache-2.0</a> · <a href="data/variants-provenance.json">轉換資料版本</a>。簡繁合併字可能對應多個原詞條。</p></main><script src="data/dictionary.js"></script><script src="data/variants.js"></script><script src="variants.js"></script><script src="engine.js"></script><script src="data/corpus.js"></script><script src="data/clauses.js"></script><script src="quality.js"></script><script src="pos.js"></script><script src="ranking.js"></script><script src="sentence.js"></script><script src="compose-engine.js"></script><script src="compose-ui.js"></script><script src="smart-ui.js"></script><script src="speech.js"></script><script src="app.js"></script>
+</html>

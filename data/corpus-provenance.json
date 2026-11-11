@@ -1,0 +1,246 @@
+{
+  "name": "HKCanCor",
+  "authors": "K. K. Luke and May L. Y. Wong",
+  "citation": "Luke & Wong (2015), The Hong Kong Cantonese Corpus: Design and Uses",
+  "repository": "https://github.com/fcbond/hkcancor",
+  "revision": "39aeadf920e0b5ca93d0ad7792c59e740e7bdd65",
+  "license": "CC BY 4.0",
+  "files": [
+    {
+      "file": "FC-001_v2",
+      "sha256": "88e96e59bd07b84dfcbaa3b5961a09d643cdc27a9e4a032c7e96b1eb65c52a21"
+    },
+    {
+      "file": "FC-005a_v2",
+      "sha256": "9cc3b4e7b98acef70a503aa856514246b6a6a2a96e170a8aa206130cd0cc9b04"
+    },
+    {
+      "file": "FC-005b_v2",
+      "sha256": "f79404a77d68f50b7c1524afb296600ce68305350246e6582449a3cefee4856b"
+    },
+    {
+      "file": "FC-009b_v",
+      "sha256": "ea5294181dcbfecca72e413e7c65c34299732486d6edc67e588073f50f8a0aec"
+    },
+    {
+      "file": "FC-011_v",
+      "sha256": "c67b706c2e6340b0fad09c9de8abf2277bdeefbddcbad8ed128550db32e12b3c"
+    },
+    {
+      "file": "FC-012_v",
+      "sha256": "6d1664fa2ff9de0e172f84c9f96cda6d700fa4ac7e9e724e2a14bc402ca9c97c"
+    },
+    {
+      "file": "FC-013_v",
+      "sha256": "41de103f8068e462ce138cae94f73269c580d439eda63d2a1a62374705a0d2bd"
+    },
+    {
+      "file": "FC-018_v",
+      "sha256": "ab2b90d636f5a9d866e3fa7c924f2413322e1d8db59e4cc4f4e3f5c88b067897"
+    },
+    {
+      "file": "FC-019_v",
+      "sha256": "64042d9f956b59fda5358b0309547ad2fd3dee5d01d99053e7117cbf26501853"
+    },
+    {
+      "file": "FC-020_v",
+      "sha256": "7a7f2397b50bc0d956ddb30e5639768c8148e8c3386619dab8ffccf148d9e84b"
+    },
+    {
+      "file": "FC-022a_v",
+      "sha256": "905c97ca9b79cbcc90b0c17a79fc16d8875553920b7b6a8115a1cb90f5ee6016"
+    },
+    {
+      "file": "FC-022b_v",
+      "sha256": "9ad23a73d0f065e1436e14aa18900d31dc12237755a11e572494ffdc53c53714"
+    },
+    {
+      "file": "FC-025_v",
+      "sha256": "55acc1b4358c8b4cc38e90e783d1e18172cc2ea1286533218127c816d872a280"
+    },
+    {
+      "file": "FC-026_v2",
+      "sha256": "9b4f94ccc891dcc3595ffbe831a5914b5a4e9c8d3892f6b4ebfc5bb905ff7c98"
+    },
+    {
+      "file": "FC-027_v2",
+      "sha256": "502e50e7a478550a5956863fe6f45044c1b7612b9c6cdac56066c987d67951d0"
+    },
+    {
+      "file": "FC-028_v2",
+      "sha256": "6e3c53d98c47b7dcedb45906703237f8ffc2ece6439bfa5e1e29d00d35f01510"
+    },
+    {
+      "file": "FC-029_v",
+      "sha256": "f28b4b25bd7716941c01eecd24e734a8705e4ce4a35b1a29869eda35d53f404c"
+    },
+    {
+      "file": "FC-033_v2",
+      "sha256": "a77521b30e6251f6cfb86f636892b887549fbea036ee0bee30a29079cab3d631"
+    },
+    {
+      "file": "FC-035_v2",
+      "sha256": "395fe7c477b6c0b6995c48015924a2c9b06e070998410619196a79531c3b2bd3"
+    },
+    {
+      "file": "FC-038a_v2",
+      "sha256": "ae7a97a6b1dac420f2c9a0feb5db2290417bc2d0446e3d0e63fa19a37a5ba3d9"
+    },
+    {
+      "file": "FC-038b_v2",
+      "sha256": "cf398da70e7e5a2460c91013d732042ce43cd95c746b528a6950dcc480d80a0b"
+    },
+    {
+      "file": "FC-042_v",
+      "sha256": "6ffc676918327783d76e6780d38a4f87752ad10bfddf27c38dacde06e9538566"
+    },
+    {
+      "file": "FC-044_v2",
+      "sha256": "361968d7024796893ec45cf2acc392df3a7e5f1d46baeb7b24b577abbd305355"
+    },
+    {
+      "file": "FC-045_v2",
+      "sha256": "9461933e7c58dcabb46e754cdc8fd8e95dadd7f7d30a56ad32bd42af6c44fb36"
+    },
+    {
+      "file": "FC-046_v2",
+      "sha256": "31b5c1e6f8532b4c3a576dd09b72178cbcfe1fd28b5fd1be1e23e36ea07285d7"
+    },
+    {
+      "file": "FC-048_v2",
+      "sha256": "c45198e25b4f5721cef7d9d0f26c02c8e90f47eb0b83e16cd2af5b3afa6b4ee8"
+    },
+    {
+      "file": "FC-049_v2",
+      "sha256": "ad42dfe984b884e8f5e9597ccf7420a62e9a8660f42aeba105f415da9010e91f"
+    },
+    {
+      "file": "FC-052_v2",
+      "sha256": "0f07b189c02c716d919aab91efc1fcd5d2ceb7ecf6527935f540c98c9a61212a"
+    },
+    {
+      "file": "FC-053_v2",
+      "sha256": "4c6c0a2617fec6874b1a26529d58f63e9bce2899c453f1a99855084d506bf86f"
+    },
+    {
+      "file": "FC-055_v2",
+      "sha256": "1bbad12ffb420b5742ee1822da213173e93b1d63c574b9fd4cc5d64e103fac9a"
+    },
+    {
+      "file": "FC-056_v2",
+      "sha256": "ffceafcdf1d2450a5e173641064836ecdcbe95846715042fb2812489eb8b3c18"
+    },
+    {
+      "file": "FC-101_v2",
+      "sha256": "8d462a0358b277af8bed8a8e7d7a734b57fff6fa53ec4856f6274ddceb16d439"
+    },
+    {
+      "file": "FC-103_v2",
+      "sha256": "3b412c8eaacb9fa38121dad6e3b64177cc53cbaa2bf07b4dec89a36bb81488d8"
+    },
+    {
+      "file": "FC-104_v2",
+      "sha256": "2b38f8383a2f3d1c6588dce455a59f8d199b1d857e7ed3649c70e3223a5174c5"
+    },
+    {
+      "file": "FC-105_v2",
+      "sha256": "9dbae563dc77bee946012c9c94d11ade481678e9be5b81c52800769dd9101174"
+    },
+    {
+      "file": "FC-106a_v2",
+      "sha256": "f37108099ea7aba7ffa1b4f820532494dab4a293e6bc157ca54514e274172c75"
+    },
+    {
+      "file": "FC-106b_v2",
+      "sha256": "464df85996cf19a5c5d102b9cac0526f85a3203a552b2e390e5311a9d4cd8507"
+    },
+    {
+      "file": "FC-107_v2",
+      "sha256": "3a95f67ce22cbb25a1e43c9e7fa82b49b0c15d42567debda12752833d5f4fcd4"
+    },
+    {
+      "file": "FC-108a_v2",
+      "sha256": "b2cded9c3de1db8faa15b576cea223103d64da7b34784b0ba149580bba34483d"
+    },
+    {
+      "file": "FC-108c_v2",
+      "sha256": "d00baeb5b1819399eafd317e2bec137ef7188de465e9729211967bc88d6f8db6"
+    },
+    {
+      "file": "FC-108d_v2",
+      "sha256": "25f74678d7ec45fd69145bd9c11dcaf6feb0a0bb2694b7b429f29f7ac5549e98"
+    },
+    {
+      "file": "FC-109a_v2",
+      "sha256": "5391d6621c408e3aa6bf289cef2085d40223b64bb762fcb891048df2b3bcf569"
+    },
+    {
+      "file": "FC-R002a_v2",
+      "sha256": "2e0efa849d03f93953aaa6f84305c46e88bc462068d22609f68431d627128f9a"
+    },
+    {
+      "file": "FC-R002b_v2",
+      "sha256": "bbb736eee6631228776a26da4e2cf7b9c78fe5850dbfaf9992df448c6b774b6b"
+    },
+    {
+      "file": "FC-R003_v2",
+      "sha256": "2ad29826afa48129b73dfb6fbd8f56e5941f2d5237f536c20616f97f226ecf91"
+    },
+    {
+      "file": "FC-R004_v2",
+      "sha256": "9e899ee7e2b37c6c6ab521e97635c64f0dfdfa3e22c5ee5275c67a2ea5a78aa0"
+    },
+    {
+      "file": "FC-R005_v2",
+      "sha256": "ed5caeedaf96b7169a4344fb536cf7fb2fc163338751a6b7346552bbd0c00f1b"
+    },
+    {
+      "file": "FC-R006_v2",
+      "sha256": "27c4b224b2b5fa9adf2efbc9a16831da873398b42172b9afe23ec18a9c3b7533"
+    },
+    {
+      "file": "FC-R007_v2",
+      "sha256": "6ed1884efbf36b8436b7ce71b14c797f0a8af6a8dfd89f559fde8b2fb5a848f6"
+    },
+    {
+      "file": "FC-R009_v",
+      "sha256": "38b3e596e657a5aa32193cba3d69266139cd40ea6101cec911365d63bc907a03"
+    },
+    {
+      "file": "FC-R010a_v",
+      "sha256": "18ba831e634f2a9bc2ec1e2edfc4b0a271c0d3913e358463c2f53e518afd195d"
+    },
+    {
+      "file": "FC-R010b_v",
+      "sha256": "76562970a8b1eb859021ac01eef14399959b9facbf44edc715406d4cae7dee5b"
+    },
+    {
+      "file": "FC-R011_v",
+      "sha256": "3aab00d9bc8fda821c0337c7b6a7d37bf0cd88bbeb9aeaaa3ff3d605d3102372"
+    },
+    {
+      "file": "FC-R013a_v",
+      "sha256": "78f798450858bb7e85a2b5a9a74fddad1f87725168185fa139cc7479def2cfa9"
+    },
+    {
+      "file": "FC-R013b_v",
+      "sha256": "98a52fff82703594a49629e8ab0555e0141354bd0a379c93ec8b6ecb1bdf45f9"
+    },
+    {
+      "file": "FC-R016_v",
+      "sha256": "0be309681b7afe28db469c37e58f8913e18c331a90e0b9044f70fbb65c0562b6"
+    },
+    {
+      "file": "FC-R017_v",
+      "sha256": "db049bf7a0762ca8baf34b1f9d962904862b009ff836dc18b70a9419c4caabe9"
+    },
+    {
+      "file": "FC-R018_v",
+      "sha256": "b3094d7996651745f36d1ee1e1ab77c9f296f886c1fdfebf1d5b6e924524201a"
+    }
+  ],
+  "tokens": 128135,
+  "word_types": 6420,
+  "utterances": 10801,
+  "method": "Han tokens only; original segmentation; word and exact-reading counts; adjacent-word counts without crossing punctuation; previous 4 content-token window; symmetric positive PMI; pair count>=2, word count>=3; top24 contexts. Frequencies are corpus counts, not population estimates."
+}

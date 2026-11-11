@@ -1,0 +1,20 @@
+const assert = require('node:assert/strict');
+require('../speech.js');
+const speech = globalThis.CantoSpeech;
+assert.equal(speech.cantoneseVoice([{lang:'zh-CN',localService:true}]), undefined);
+assert.equal(speech.cantoneseVoice([{lang:'yue-HK',localService:false}]), undefined);
+assert.equal(speech.cantoneseVoice([{lang:'zh-HK',localService:true}]).lang, 'zh-HK');
+assert.equal(speech.cantoneseVoice([{lang:'yue-HK',localService:true}]).lang, 'yue-HK');
+let spoken;
+globalThis.speechSynthesis = {cancel(){},getVoices:()=>[{lang:'yue-HK',localService:true}],speak:utterance=>{spoken=utterance;}};
+globalThis.SpeechSynthesisUtterance = class {constructor(text){this.text=text;}};
+const control = {textContent:'▶',setAttribute(){}};
+(async () => {
+  await speech.play({word:'紅糖',reading:'hung4 tong4'},control,()=>{});
+  assert.equal(spoken.text,'紅糖');
+  assert.equal(spoken.lang,'yue-HK');
+  assert.equal(control.textContent,'■');
+  await speech.play({word:'紅糖',reading:'hung4 tong4'},control,()=>{});
+  assert.equal(control.textContent,'▶');
+  console.log('PASS: 本地粵語語音篩選、播放、停止、不回退普通話');
+})().catch(error=>{console.error(error);process.exitCode=1;});
