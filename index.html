@@ -7,7 +7,22 @@
 <link rel="stylesheet" href="speech.css">
 <link rel="stylesheet" href="smart.css">
 <link rel="stylesheet" href="compose.css">
-<header><a href="#">字有聲<span> CANTO STUDIO</span></a><select id="script-mode" aria-label="简繁模式"><option value="traditional">繁體</option><option value="simplified">简体</option></select></header>
+<header>
+<a href="#">字有聲<span> CANTO STUDIO</span></a>
+<div class="header-actions">
+<button id="open-guide" type="button" aria-haspopup="dialog" aria-controls="usage-guide">使用說明</button>
+<select id="script-mode" aria-label="简繁模式"><option value="traditional">繁體</option><option value="simplified" selected>简体</option></select>
+</div>
+</header>
+<dialog id="usage-guide" aria-labelledby="guide-title">
+<h2 id="guide-title">0243 填詞法入門</h2>
+<ol>
+<li><strong>先用數字把旋律唱出來。</strong> 像林子祥的《數字人生》那樣，從 <code>394052</code>（3、9、4、0、5、2）或 <code>0243</code>（0、2、4、3）選一組數字。用粵語把它們當作暫時的歌詞，跟着旋律唱。數字可以重複，順序按旋律決定。唱得不順，就換個數字再試。</li>
+<li><strong>記下唱得順的「諧音數字」。</strong> 每個數字用粵語念出來，自帶聲調，可以提示這個位置適合填甚麼聲調的字。</li>
+<li><strong>輸入數字，找同聲調的詞。</strong> 用哪組數字唱，就選對應的「394052 嚴格」或「0243 寬鬆」模式，再把唱出的數字按順序輸入搜尋框。從候選裡挑合意的詞，填回旋律唱一遍，聽聽是否順口。長句也可以用「自由拼詞」分段找詞。</li>
+</ol>
+<form method="dialog"><button class="primary" autofocus>開始填詞</button></form>
+</dialog>
 <main>
 <section class="intro"><p class="eyebrow">從聲調，找到下一句。</p><h1>讓每一個字，<br>落在對的聲音上。</h1><p>輸入旋律的數字編碼，探索現成粵語字詞。<br>留住喜歡的字，再慢慢寫成你的歌。</p><div id="stats" class="badge">正在載入本地詞庫…</div></section>
 <section class="workspace"><div class="heading"><h2>輸入聲調，查找字詞</h2></div>

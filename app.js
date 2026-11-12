@@ -255,7 +255,7 @@ function runSearch() {
       const found = engine.search(index,code,effectiveLocks,false,CantoVariants.normalizeCharacter,rhyme);
       CantoCompose.search({code,mapping:[...mapping],found});
       element('message').textContent = `已按 ${encodingMode} 搜尋每組真實詞條。`;
-      return;
+      return true;
     }
     const accept = wordPOS.length ? acceptWord : null;
     result = engine.search(index, code, effectiveLocks, true, CantoVariants.normalizeCharacter, rhyme, accept);
@@ -265,14 +265,23 @@ function runSearch() {
     if (mixed) element('message').textContent += ' 混合輸入：數字位置找詞，歌詞位置保留原字。';
     currentConstraints = {code, mapping: [...mapping], locks: [...effectiveLocks], rhyme: [...rhyme], whole: true, pos:[...wordPOS]};
     renderResults();
+    return true;
   } catch (error) {
     resolvedCode = '';
     invalidate();
     renderTiles();
     element('message').textContent = error.message;
+    return false;
   }
 }
 let searchTimer;
+function submitSearch() {
+  clearTimeout(searchTimer);
+  if (!runSearch()) return;
+  const panel = element(workspaceTab === 'compose' ? 'compose-panel' : 'word-panel');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  panel.scrollIntoView({block: 'start', behavior: reducedMotion ? 'instant' : 'smooth'});
+}
 function changeEncoding(nextMode, search = true) {
   if (nextMode === encodingMode) return;
   clearTimeout(searchTimer);
@@ -299,7 +308,11 @@ element('code').oninput = () => {
 element('code').oncompositionstart = () => { clearTimeout(searchTimer); };
 element('code').addEventListener('input', event => { if (event.isComposing) clearTimeout(searchTimer); });
 element('code').oncompositionend = element('code').oninput;
-element('code').onkeydown = event => { if (event.key === 'Enter') { clearTimeout(searchTimer); runSearch(); } };
+element('code').onkeydown = event => {
+  if (event.key !== 'Enter' || event.isComposing) return;
+  event.preventDefault();
+  submitSearch();
+};
 element('lyrics').oninput = () => {
   originalDraft = null;
   const characters = Array.from(element('lyrics').value);
@@ -308,7 +321,7 @@ element('lyrics').oninput = () => {
   renderTiles();
 };
 element('unlock').onclick = () => { locks = []; invalidate(); renderTiles(); };
-element('search').onclick = runSearch;
+element('search').onclick = submitSearch;
 function switchTab(tab) {
   clearTimeout(searchTimer);
   workspaceTab = tab;
@@ -390,11 +403,18 @@ element('script-mode').onchange = () => {
 };
 new MutationObserver(translatePage).observe(document.documentElement, {childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'placeholder']});
 element('stats').textContent = `${words.size.toLocaleString()} 個字詞 · ${CANTO_DATA.length.toLocaleString()} 條讀音 · 本地搜尋`;
-renderTiles();
-runSearch();
+const scriptSelector = element('script-mode');
 try {
-  if (localStorage.getItem('canto-script-mode') === 'simplified') {
-    element('script-mode').value = 'simplified';
-    element('script-mode').onchange();
+  if (localStorage.getItem('canto-script-mode') === 'traditional') {
+    scriptSelector.value = 'traditional';
   }
 } catch {}
+if (scriptSelector.value !== scriptMode) scriptSelector.onchange();
+else renderTiles();
+runSearch();
+
+const usageGuide = element('usage-guide');
+const openGuideButton = element('open-guide');
+openGuideButton.onclick = () => usageGuide.showModal();
+usageGuide.addEventListener('close', () => openGuideButton.focus());
+usageGuide.showModal();
